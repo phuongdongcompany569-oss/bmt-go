@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BMT GO Premium</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Arial,sans-serif;background:#080808;color:#fff}
+.screen{display:none;min-height:100vh;position:relative}
+.active{display:block}
+.bg{
+position:absolute;inset:0;
+background-size:cover;background-position:center;
+}
+.overlay{
+position:absolute;inset:0;
+background:linear-gradient(to top,rgba(0,0,0,.9),rgba(0,0,0,.3));
+}
+.content{
+position:relative;z-index:2;
+padding:24px;
+min-height:100vh;
+display:flex;flex-direction:column;justify-content:flex-end;
+}
+.logo{position:absolute;top:20px;left:20px;font-size:28px;font-weight:bold;color:#ff2b2b}
+.glass{
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(14px);
+border:1px solid rgba(255,255,255,.1);
+border-radius:24px;
+padding:20px;
+}
+.btn{
+display:block;width:100%;
+padding:16px;border:none;border-radius:16px;
+margin-top:12px;background:#d61f26;color:white;font-weight:bold
+}
+.btn2{background:#222}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}
+.tile{
+background:rgba(255,255,255,.08);
+padding:18px;border-radius:18px;text-align:center
+}
+.card{
+background:#111;border-radius:24px;overflow:hidden;margin:16px;
+box-shadow:0 10px 30px rgba(0,0,0,.4)
+}
+.card img{width:100%;height:220px;object-fit:cover}
+.card-body{padding:18px}
+.tag{background:#ffffff15;padding:6px 10px;border-radius:30px;display:inline-block}
+</style>
+</head>
+<body>
+
+<div id="s1" class="screen active">
+<div class="bg" style="background-image:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1400')"></div>
+<div class="overlay"></div>
+<div class="content">
+<div class="logo">PD • BMT GO</div>
+<div class="glass">
+<h1>Khám phá Buôn Ma Thuột như người địa phương</h1>
+<p style="margin-top:10px;color:#ddd">Hôm nay bạn muốn làm gì?</p>
+<div class="grid">
+<div class="tile">🍜 Đặc sản</div>
+<div class="tile">☕ Cafe</div>
+<div class="tile">🏛️ Khám phá</div>
+<div class="tile">🏨 Nghỉ ngơi</div>
+</div>
+<button class="btn" onclick="go(2)">Bắt đầu</button>
+</div>
+</div>
+</div>
+
+<div id="s2" class="screen">
+<div class="bg" style="background:#0d0d0d"></div>
+<div class="content">
+<div class="glass">
+<h1>📍 Truy cập vị trí</h1>
+<p style="margin-top:10px">Để tìm những địa điểm phù hợp gần bạn nhất.</p>
+<button class="btn" onclick="go(3)">Cho phép</button>
+</div>
+</div>
+</div>
+
+<div id="s3" class="screen">
+<div class="bg" style="background-image:url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1400')"></div>
+<div class="overlay"></div>
+<div class="content">
+<div class="glass">
+<h1>Có phải bạn đang ở Bún đỏ Hồng?</h1>
+<p style="margin-top:10px">🍜 Đặc sản nổi tiếng Buôn Ma Thuột</p>
+<button class="btn" onclick="go(4)">✓ Đúng rồi</button>
+<button class="btn btn2" onclick="go(4)">✗ Không phải</button>
+</div>
+</div>
+</div>
+
+<div id="s4" class="screen">
+<div class="content" style="justify-content:center">
+<h1 style="margin-bottom:20px">Bạn muốn đi đâu tiếp?</h1>
+<div class="grid">
+<div class="tile">☕ Cafe</div>
+<div class="tile">🏛️ Khám phá</div>
+<div class="tile">🏨 Nghỉ ngơi</div>
+<div class="tile">🎉 Giải trí</div>
+</div>
+<button class="btn" onclick="go(5)">Khám phá ngay</button>
+</div>
+</div>
+
+<div id="s5" class="screen active2">
+<div style="padding-top:20px">
+<div class="card">
+<img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200">
+<div class="card-body">
+<div class="tag">☕ 600m</div>
+<h2 style="margin-top:10px">Arul Coffee</h2>
+<p style="margin-top:8px;color:#bbb">Điểm dừng chân nổi tiếng của du khách.</p>
+</div>
+</div>
+<button class="btn" style="margin:16px" onclick="go(6)">Xem chi tiết</button>
+</div>
+</div>
+
+<div id="s6" class="screen">
+<div class="bg" style="background-image:url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1400')"></div>
+<div class="overlay"></div>
+<div class="content">
+<div class="glass">
+<h1>Arul Coffee</h1>
+<p style="margin-top:10px">Cafe sân vườn nổi tiếng, phù hợp check-in.</p>
+<p style="margin-top:12px">🚕 Ước tính cước: 20.000đ - 25.000đ</p>
+<button class="btn">🗺️ Xem bản đồ</button>
+<button class="btn">🚕 Đặt xe đến đây</button>
+</div>
+</div>
+</div>
+
+<script>
+function go(n){
+document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+document.getElementById('s'+n).classList.add('active');
+window.scrollTo(0,0);
+}
+</script>
+</body>
+</html>
