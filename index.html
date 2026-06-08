@@ -2,147 +2,255 @@
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>BMT GO Premium</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BMT GO</title>
+
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Arial,sans-serif;background:#080808;color:#fff}
-.screen{display:none;min-height:100vh;position:relative}
-.active{display:block}
-.bg{
-position:absolute;inset:0;
-background-size:cover;background-position:center;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
 }
-.overlay{
-position:absolute;inset:0;
-background:linear-gradient(to top,rgba(0,0,0,.9),rgba(0,0,0,.3));
+
+body{
+background:#050505;
+color:white;
+overflow-x:hidden;
 }
-.content{
-position:relative;z-index:2;
-padding:24px;
-min-height:100vh;
-display:flex;flex-direction:column;justify-content:flex-end;
-}
-.logo{position:absolute;top:20px;left:20px;font-size:28px;font-weight:bold;color:#ff2b2b}
-.glass{
-background:rgba(255,255,255,.08);
-backdrop-filter:blur(14px);
-border:1px solid rgba(255,255,255,.1);
-border-radius:24px;
+
+.hero{
+height:100vh;
+background:
+linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.9)),
+url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200');
+background-size:cover;
+background-position:center;
+display:flex;
+align-items:center;
+justify-content:center;
 padding:20px;
 }
-.btn{
-display:block;width:100%;
-padding:16px;border:none;border-radius:16px;
-margin-top:12px;background:#d61f26;color:white;font-weight:bold
+
+.glass{
+width:100%;
+max-width:420px;
+background:rgba(15,15,15,.75);
+backdrop-filter:blur(16px);
+border:1px solid rgba(255,255,255,.08);
+border-radius:30px;
+padding:24px;
+box-shadow:0 0 40px rgba(255,0,0,.15);
 }
-.btn2{background:#222}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}
-.tile{
-background:rgba(255,255,255,.08);
-padding:18px;border-radius:18px;text-align:center
+
+.logo{
+display:flex;
+align-items:center;
+gap:12px;
+margin-bottom:25px;
 }
-.card{
-background:#111;border-radius:24px;overflow:hidden;margin:16px;
-box-shadow:0 10px 30px rgba(0,0,0,.4)
+
+.logo img{
+width:65px;
 }
-.card img{width:100%;height:220px;object-fit:cover}
-.card-body{padding:18px}
-.tag{background:#ffffff15;padding:6px 10px;border-radius:30px;display:inline-block}
+
+.logo h1{
+font-size:34px;
+font-weight:800;
+}
+
+.logo span{
+color:#ff2020;
+}
+
+.tagline{
+color:#bbb;
+font-size:14px;
+margin-top:4px;
+}
+
+.hero h2{
+font-size:38px;
+margin-bottom:12px;
+line-height:1.2;
+}
+
+.hero p{
+color:#ccc;
+line-height:1.6;
+margin-bottom:25px;
+}
+
+.start-btn{
+width:100%;
+padding:16px;
+border:none;
+border-radius:16px;
+background:#ff2020;
+color:white;
+font-size:18px;
+font-weight:700;
+cursor:pointer;
+transition:.3s;
+}
+
+.start-btn:hover{
+transform:translateY(-2px);
+background:#ff3030;
+}
+
+.categories{
+margin-top:20px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:12px;
+}
+
+.category{
+background:rgba(255,255,255,.05);
+border:1px solid rgba(255,255,255,.08);
+border-radius:16px;
+padding:16px;
+cursor:pointer;
+transition:.3s;
+}
+
+.category:hover{
+border-color:#ff2020;
+transform:translateY(-3px);
+}
+
+.category h3{
+font-size:16px;
+margin-bottom:5px;
+}
+
+.category p{
+font-size:12px;
+color:#999;
+margin:0;
+}
+
+.dropdown{
+display:none;
+margin-top:15px;
+background:#111;
+border-radius:15px;
+padding:15px;
+}
+
+.place{
+padding:12px;
+border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.place:last-child{
+border:none;
+}
+
+.place strong{
+display:block;
+margin-bottom:5px;
+}
+
+.place span{
+color:#999;
+font-size:13px;
+}
 </style>
 </head>
+
 <body>
 
-<div id="s1" class="screen active">
-<div class="bg" style="background-image:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1400')"></div>
-<div class="overlay"></div>
-<div class="content">
-<div class="logo">PD • BMT GO</div>
+<section class="hero">
+
 <div class="glass">
-<h1>Khám phá Buôn Ma Thuột như người địa phương</h1>
-<p style="margin-top:10px;color:#ddd">Hôm nay bạn muốn làm gì?</p>
-<div class="grid">
-<div class="tile">🍜 Đặc sản</div>
-<div class="tile">☕ Cafe</div>
-<div class="tile">🏛️ Khám phá</div>
-<div class="tile">🏨 Nghỉ ngơi</div>
-</div>
-<button class="btn" onclick="go(2)">Bắt đầu</button>
-</div>
+
+<div class="logo">
+<img src="https://i.imgur.com/Jn1oY2X.png">
+<div>
+<h1>BMT <span>GO</span></h1>
+<div class="tagline">Khám phá Buôn Ma Thuột như người địa phương</div>
 </div>
 </div>
 
-<div id="s2" class="screen">
-<div class="bg" style="background:#0d0d0d"></div>
-<div class="content">
-<div class="glass">
-<h1>📍 Truy cập vị trí</h1>
-<p style="margin-top:10px">Để tìm những địa điểm phù hợp gần bạn nhất.</p>
-<button class="btn" onclick="go(3)">Cho phép</button>
-</div>
-</div>
+<h2>Ăn xong rồi?</h2>
+
+<p>
+Khám phá những quán cafe, điểm check-in, khu vui chơi và địa điểm thú vị mà người dân Buôn Ma Thuột thật sự hay đi.
+</p>
+
+<button class="start-btn">
+🚀 Khám phá ngay
+</button>
+
+<div class="categories">
+
+<div class="category" onclick="toggleBox('cafe')">
+<h3>☕ Cafe</h3>
+<p>Quán đẹp, view chill</p>
 </div>
 
-<div id="s3" class="screen">
-<div class="bg" style="background-image:url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1400')"></div>
-<div class="overlay"></div>
-<div class="content">
-<div class="glass">
-<h1>Có phải bạn đang ở Bún đỏ Hồng?</h1>
-<p style="margin-top:10px">🍜 Đặc sản nổi tiếng Buôn Ma Thuột</p>
-<button class="btn" onclick="go(4)">✓ Đúng rồi</button>
-<button class="btn btn2" onclick="go(4)">✗ Không phải</button>
-</div>
-</div>
+<div class="category" onclick="toggleBox('khampha')">
+<h3>🏞 Khám phá</h3>
+<p>Điểm tham quan nổi bật</p>
 </div>
 
-<div id="s4" class="screen">
-<div class="content" style="justify-content:center">
-<h1 style="margin-bottom:20px">Bạn muốn đi đâu tiếp?</h1>
-<div class="grid">
-<div class="tile">☕ Cafe</div>
-<div class="tile">🏛️ Khám phá</div>
-<div class="tile">🏨 Nghỉ ngơi</div>
-<div class="tile">🎉 Giải trí</div>
-</div>
-<button class="btn" onclick="go(5)">Khám phá ngay</button>
-</div>
+<div class="category" onclick="toggleBox('nghingoi')">
+<h3>🏨 Nghỉ ngơi</h3>
+<p>Khách sạn, homestay</p>
 </div>
 
-<div id="s5" class="screen active2">
-<div style="padding-top:20px">
-<div class="card">
-<img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200">
-<div class="card-body">
-<div class="tag">☕ 600m</div>
-<h2 style="margin-top:10px">Arul Coffee</h2>
-<p style="margin-top:8px;color:#bbb">Điểm dừng chân nổi tiếng của du khách.</p>
-</div>
-</div>
-<button class="btn" style="margin:16px" onclick="go(6)">Xem chi tiết</button>
-</div>
+<div class="category" onclick="toggleBox('giaitri')">
+<h3>🎡 Giải trí</h3>
+<p>Vui chơi thư giãn</p>
 </div>
 
-<div id="s6" class="screen">
-<div class="bg" style="background-image:url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1400')"></div>
-<div class="overlay"></div>
-<div class="content">
-<div class="glass">
-<h1>Arul Coffee</h1>
-<p style="margin-top:10px">Cafe sân vườn nổi tiếng, phù hợp check-in.</p>
-<p style="margin-top:12px">🚕 Ước tính cước: 20.000đ - 25.000đ</p>
-<button class="btn">🗺️ Xem bản đồ</button>
-<button class="btn">🚕 Đặt xe đến đây</button>
 </div>
+
+<div class="dropdown" id="cafe">
+<div class="place"><strong>Arul Coffee</strong><span>600m • ⭐ 4.8</span></div>
+<div class="place"><strong>KoTam Coffee</strong><span>1.1km • ⭐ 4.7</span></div>
+<div class="place"><strong>Tiệm Cafe Tháng 3</strong><span>1.3km • ⭐ 4.8</span></div>
+<div class="place"><strong>The Coffee House</strong><span>1.5km • ⭐ 4.6</span></div>
 </div>
+
+<div class="dropdown" id="khampha">
+<div class="place"><strong>Làng Cà Phê Trung Nguyên</strong></div>
+<div class="place"><strong>Bảo Tàng Thế Giới Cà Phê</strong></div>
+<div class="place"><strong>Thác Dray Nur</strong></div>
+<div class="place"><strong>Buôn Ako Dhong</strong></div>
 </div>
+
+<div class="dropdown" id="nghingoi">
+<div class="place"><strong>Mường Thanh BMT</strong></div>
+<div class="place"><strong>Elephants Hotel</strong></div>
+<div class="place"><strong>Sojo Hotel</strong></div>
+<div class="place"><strong>Lee's House</strong></div>
+</div>
+
+<div class="dropdown" id="giaitri">
+<div class="place"><strong>CGV Buôn Ma Thuột</strong></div>
+<div class="place"><strong>Khu vui chơi Kitty</strong></div>
+<div class="place"><strong>Phố đi bộ</strong></div>
+<div class="place"><strong>Bowling Center</strong></div>
+</div>
+
+</div>
+
+</section>
 
 <script>
-function go(n){
-document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
-document.getElementById('s'+n).classList.add('active');
-window.scrollTo(0,0);
+function toggleBox(id){
+
+document.querySelectorAll('.dropdown')
+.forEach(box=>{
+box.style.display='none'
+})
+
+document.getElementById(id).style.display='block'
 }
 </script>
+
 </body>
 </html>
