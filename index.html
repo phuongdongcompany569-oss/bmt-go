@@ -277,3 +277,109 @@ Hôm nay bạn muốn làm gì?
 </div>
 
 </div>
+<div id="food" class="dropdown">
+...
+</div>
+
+</div>
+<div>
+
+<div class="card" onclick="toggleMenu('cafe')">
+<span class="icon">☕</span>
+<div class="card-title">Uống cafe</div>
+</div>
+
+<div id="cafe" class="dropdown">
+<a href="#">Arul Coffee</a>
+<a href="#">KoTam Coffee</a>
+<a href="#">The Coffee House</a>
+<a href="#">Tiệm Cafe Tháng 3</a>
+<a href="#">Soul Roastery</a>
+</div>
+
+</div>
+
+<div>
+
+<div class="card" onclick="toggleMenu('explore')">
+<span class="icon">🏛</span>
+<div class="card-title">Khám phá</div>
+</div>
+
+<div id="explore" class="dropdown">
+<a href="#">Bảo tàng Thế giới Cà phê</a>
+<a href="#">Thác Dray Nur</a>
+<a href="#">Làng Cà phê Trung Nguyên</a>
+<a href="#">Khu du lịch KoTam</a>
+<a href="#">Tượng đài Chiến thắng</a>
+</div>
+
+</div>
+
+<div>
+
+<div class="card" onclick="toggleMenu('hotel')">
+<span class="icon">🛏</span>
+<div class="card-title">Nghỉ ngơi</div>
+</div>
+
+<div id="hotel" class="dropdown">
+<a href="#">Mường Thanh</a>
+<a href="#">SOJO Hotel</a>
+<a href="#">Dakruco Hotel</a>
+<a href="#">Elephants Hotel</a>
+<a href="#">Hai Bà Trưng Hotel</a>
+</div>
+
+</div>
+
+<div class="full">
+
+<div class="card" onclick="toggleMenu('fun')">
+<span class="icon">🎉</span>
+<div class="card-title">Giải trí</div>
+</div>
+
+<div id="fun" class="dropdown">
+<a href="#">CGV Buôn Ma Thuột</a>
+<a href="#">Karaoke ICOOL</a>
+<a href="#">Chợ đêm</a>
+<a href="#">Phố đi bộ</a>
+<a href="#">Khu vui chơi trẻ em</a>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<button class="taxi">
+<span>🚕</span>
+Đặt xe
+</button>
+
+</section>
+
+<script>
+
+function toggleMenu(id){
+
+const menus=document.querySelectorAll('.dropdown');
+
+menus.forEach(menu=>{
+
+if(menu.id!==id){
+menu.classList.remove('show');
+}
+
+});
+
+document.getElementById(id).classList.toggle('show');
+
+}
+
+</script>
+
+</body>
+</html>
