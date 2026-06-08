@@ -34,194 +34,234 @@ background:url('tuongdai.jpg') center center/cover no-repeat;
 content:"";
 position:absolute;
 inset:0;
-background:rgba(0,0,0,.62);
+background:rgba(0,0,0,.72);
 backdrop-filter:blur(1px);
 }
 
-.wrapper{
+header{
 position:relative;
-z-index:2;
-padding:25px;
-}
-
-.header{
+z-index:5;
 display:flex;
 justify-content:space-between;
 align-items:center;
-margin-top:10px;
-}
-
-.brand{
-display:flex;
-align-items:center;
-gap:12px;
+padding:28px 24px;
 }
 
 .logo{
-width:90px;
-}
-
-.brand-text h2{
-font-size:36px;
-font-weight:800;
-line-height:1;
-}
-
-.brand-text h2 span{
-color:#ff2d2d;
-}
-
-.brand-text p{
-font-size:11px;
-color:#ccc;
-margin-top:5px;
+width:120px;
 }
 
 .menu{
 width:52px;
 height:52px;
 border-radius:50%;
-background:rgba(0,0,0,.5);
-backdrop-filter:blur(12px);
+background:rgba(0,0,0,.45);
 display:flex;
-justify-content:center;
 align-items:center;
-font-size:28px;
+justify-content:center;
+font-size:30px;
 cursor:pointer;
+backdrop-filter:blur(10px);
 }
 
 .content{
-margin-top:50px;
+position:relative;
+z-index:5;
+padding:20px 24px 140px;
+max-width:430px;
 }
 
 .content h3{
-font-size:20px;
-font-weight:300;
-margin-bottom:5px;
+font-size:22px;
+font-weight:400;
+margin-bottom:8px;
 }
 
 .content h1{
-font-size:58px;
+font-size:72px;
+line-height:.92;
 font-weight:800;
-line-height:1.05;
-margin-bottom:15px;
+margin-bottom:20px;
 }
 
 .subtitle{
-font-size:20px;
+font-size:18px;
+line-height:1.6;
+max-width:300px;
 color:#ddd;
-max-width:280px;
-line-height:1.5;
 }
 
 .line{
-width:60px;
-height:6px;
-border-radius:30px;
-background:#ff2d2d;
+width:80px;
+height:8px;
+border-radius:50px;
+background:#ff3a2f;
 margin:35px 0;
 }
 
 .question{
-font-size:20px;
+font-size:26px;
 font-weight:700;
-margin-bottom:20px;
+margin-bottom:22px;
 }
 
 .grid{
 display:grid;
 grid-template-columns:1fr 1fr;
-gap:10px;
+gap:14px;
 }
 
 .card{
-background:rgba(10,10,10,.55);
-backdrop-filter:blur(15px);
+background:rgba(0,0,0,.45);
 border:1px solid rgba(255,255,255,.08);
-border-radius:16px;
-
-padding:12px;
-
-height:70px;
-
+border-radius:22px;
+padding:18px;
+min-height:120px;
+cursor:pointer;
+transition:.25s;
+backdrop-filter:blur(12px);
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
-
-cursor:pointer;
-transition:.3s;
+text-align:center;
 }
 
 .card:hover{
 transform:translateY(-3px);
-border-color:#ff2d2d;
+border-color:#ff3a2f;
 }
 
 .icon{
-font-size:24px;
-margin-bottom:8px;
-display:block;
+font-size:34px;
+margin-bottom:12px;
 }
 
 .card-title{
-font-size:15px;
-font-weight:500;
+font-size:18px;
+font-weight:600;
 }
 
 .full{
 grid-column:1/3;
+min-height:90px;
+flex-direction:row;
+gap:10px;
 }
 
 .dropdown{
 display:none;
-margin-top:12px;
-background:rgba(0,0,0,.65);
-border-radius:15px;
-overflow:hidden;
-}
-
-.dropdown a{
-display:block;
+grid-column:1/3;
+background:rgba(0,0,0,.72);
+border-radius:22px;
 padding:14px;
-text-decoration:none;
-color:#fff;
-border-bottom:1px solid rgba(255,255,255,.08);
+border:1px solid rgba(255,255,255,.08);
 }
 
-.dropdown a:last-child{
-border:none;
-}
-
-.dropdown a:hover{
-background:rgba(255,45,45,.15);
-}
-
-.show{
+.dropdown.active{
 display:block;
+}
+
+.place{
+padding:14px;
+border-radius:16px;
+margin-bottom:10px;
+background:rgba(255,255,255,.05);
+cursor:pointer;
+}
+
+.place:last-child{
+margin-bottom:0;
+}
+
+.place:hover{
+background:rgba(255,255,255,.1);
+}
+
+.place-name{
+font-weight:600;
+font-size:15px;
+}
+
+.place-desc{
+font-size:13px;
+color:#aaa;
+margin-top:4px;
 }
 
 .taxi{
 position:fixed;
-right:22px;
-bottom:25px;
+right:24px;
+bottom:30px;
 width:95px;
 height:95px;
 border:none;
 border-radius:50%;
-background:#ff2d2d;
+background:#ff3026;
 color:#fff;
-font-size:15px;
+font-size:34px;
 font-weight:700;
-box-shadow:0 0 30px rgba(255,45,45,.5);
-z-index:999;
-cursor:pointer;
+box-shadow:0 0 35px rgba(255,48,38,.6);
+z-index:99;
 }
 
 .taxi span{
 display:block;
-font-size:32px;
-margin-bottom:3px;
+font-size:16px;
+margin-top:4px;
+}
+
+.sideMenu{
+position:fixed;
+top:0;
+right:-100%;
+width:85%;
+height:100%;
+background:#0a0a0a;
+z-index:999;
+transition:.4s;
+padding:30px;
+overflow:auto;
+}
+
+.sideMenu.active{
+right:0;
+}
+
+.closeBtn{
+font-size:34px;
+margin-bottom:25px;
+cursor:pointer;
+}
+
+.menuItem{
+padding:18px;
+border-bottom:1px solid rgba(255,255,255,.08);
+font-size:18px;
+}
+
+@media(max-width:480px){
+
+.content{
+padding:10px 22px 140px;
+}
+
+.content h1{
+font-size:64px;
+}
+
+.question{
+font-size:22px;
+}
+
+.card{
+min-height:105px;
+}
+
+.logo{
+width:110px;
+}
+
 }
 
 </style>
@@ -230,26 +270,28 @@ margin-bottom:3px;
 
 <body>
 
-<section class="hero">
+<div class="sideMenu" id="sideMenu">
 
-<div class="wrapper">
+<div class="closeBtn" onclick="closeMenu()">✕</div>
 
-<div class="header">
+<div class="menuItem">Trang chủ</div>
+<div class="menuItem">Cafe nổi bật</div>
+<div class="menuItem">Địa điểm tham quan</div>
+<div class="menuItem">Khách sạn</div>
+<div class="menuItem">Giải trí</div>
+<div class="menuItem">Đặt xe</div>
 
-<div class="brand">
+</div>
+
+<div class="hero">
+
+<header>
 
 <img src="phuong-dong.png" class="logo">
 
-<div class="brand-text">
-<h2>BMT <span>GO</span></h2>
-<p>Khám phá Buôn Ma Thuột như người địa phương</p>
-</div>
+<div class="menu" onclick="openMenu()">☰</div>
 
-</div>
-
-<div class="menu">☰</div>
-
-</div>
+</header>
 
 <div class="content">
 
@@ -268,7 +310,6 @@ Hôm nay bạn muốn làm gì?
 </div>
 
 <div class="grid">
-
 <div>
 
 <div class="card" onclick="toggleMenu('food')">
@@ -276,20 +317,32 @@ Hôm nay bạn muốn làm gì?
 <div class="card-title">Ăn đặc sản</div>
 </div>
 
-<div id="food" class="dropdown">
-<a href="#">Bún đỏ Buôn Ma Thuột</a>
-<a href="#">Bánh ướt thịt nướng</a>
-<a href="#">Cơm lam gà nướng</a>
-<a href="#">Bún chìa</a>
-<a href="#">Lẩu cá lăng</a>
+<div class="dropdown" id="food">
+
+<div class="place">
+<div class="place-name">Bún đỏ Ban Mê</div>
+<div class="place-desc">Đặc sản nổi tiếng Buôn Ma Thuột</div>
+</div>
+
+<div class="place">
+<div class="place-name">Bánh ướt thịt nướng</div>
+<div class="place-desc">Món ăn sáng được yêu thích</div>
+</div>
+
+<div class="place">
+<div class="place-name">Cơm lam gà nướng</div>
+<div class="place-desc">Ẩm thực Tây Nguyên đặc trưng</div>
+</div>
+
+<div class="place">
+<div class="place-name">Lẩu cá lăng</div>
+<div class="place-desc">Đặc sản hồ Lak</div>
 </div>
 
 </div>
-<div id="food" class="dropdown">
-...
-</div>
 
 </div>
+
 <div>
 
 <div class="card" onclick="toggleMenu('cafe')">
@@ -297,12 +350,28 @@ Hôm nay bạn muốn làm gì?
 <div class="card-title">Uống cafe</div>
 </div>
 
-<div id="cafe" class="dropdown">
-<a href="#">Arul Coffee</a>
-<a href="#">KoTam Coffee</a>
-<a href="#">The Coffee House</a>
-<a href="#">Tiệm Cafe Tháng 3</a>
-<a href="#">Soul Roastery</a>
+<div class="dropdown" id="cafe">
+
+<div class="place">
+<div class="place-name">Arul Coffee</div>
+<div class="place-desc">View sân vườn cực đẹp</div>
+</div>
+
+<div class="place">
+<div class="place-name">KoTam Coffee</div>
+<div class="place-desc">Không gian Tây Nguyên</div>
+</div>
+
+<div class="place">
+<div class="place-name">The Coffee House</div>
+<div class="place-desc">Làm việc và gặp gỡ</div>
+</div>
+
+<div class="place">
+<div class="place-name">Tháng 3 Coffee</div>
+<div class="place-desc">Cafe trung tâm thành phố</div>
+</div>
+
 </div>
 
 </div>
@@ -314,12 +383,28 @@ Hôm nay bạn muốn làm gì?
 <div class="card-title">Khám phá</div>
 </div>
 
-<div id="explore" class="dropdown">
-<a href="#">Bảo tàng Thế giới Cà phê</a>
-<a href="#">Thác Dray Nur</a>
-<a href="#">Làng Cà phê Trung Nguyên</a>
-<a href="#">Khu du lịch KoTam</a>
-<a href="#">Tượng đài Chiến thắng</a>
+<div class="dropdown" id="explore">
+
+<div class="place">
+<div class="place-name">Tượng đài Chiến thắng</div>
+<div class="place-desc">Biểu tượng thành phố</div>
+</div>
+
+<div class="place">
+<div class="place-name">Bảo tàng Cà phê</div>
+<div class="place-desc">Điểm check-in nổi tiếng</div>
+</div>
+
+<div class="place">
+<div class="place-name">Buôn Ako Dhong</div>
+<div class="place-desc">Làng văn hóa Ê Đê</div>
+</div>
+
+<div class="place">
+<div class="place-name">Hồ Ea Kao</div>
+<div class="place-desc">Không gian thiên nhiên đẹp</div>
+</div>
+
 </div>
 
 </div>
@@ -331,29 +416,62 @@ Hôm nay bạn muốn làm gì?
 <div class="card-title">Nghỉ ngơi</div>
 </div>
 
-<div id="hotel" class="dropdown">
-<a href="#">Mường Thanh</a>
-<a href="#">SOJO Hotel</a>
-<a href="#">Dakruco Hotel</a>
-<a href="#">Elephants Hotel</a>
-<a href="#">Hai Bà Trưng Hotel</a>
+<div class="dropdown" id="hotel">
+
+<div class="place">
+<div class="place-name">Elephants Hotel</div>
+<div class="place-desc">Khách sạn trung tâm</div>
+</div>
+
+<div class="place">
+<div class="place-name">Muong Thanh</div>
+<div class="place-desc">Tiện nghi cao cấp</div>
+</div>
+
+<div class="place">
+<div class="place-name">Dakruco Hotel</div>
+<div class="place-desc">Không gian rộng rãi</div>
+</div>
+
+<div class="place">
+<div class="place-name">Lee's House</div>
+<div class="place-desc">Homestay nổi tiếng</div>
 </div>
 
 </div>
 
-<div class="full">
+</div>
 
-<div class="card" onclick="toggleMenu('fun')">
+<div class="card full" onclick="toggleMenu('fun')">
+
 <span class="icon">🎉</span>
-<div class="card-title">Giải trí</div>
+
+<div class="card-title">
+Giải trí
 </div>
 
-<div id="fun" class="dropdown">
-<a href="#">CGV Buôn Ma Thuột</a>
-<a href="#">Karaoke ICOOL</a>
-<a href="#">Chợ đêm</a>
-<a href="#">Phố đi bộ</a>
-<a href="#">Khu vui chơi trẻ em</a>
+</div>
+
+<div class="dropdown" id="fun">
+
+<div class="place">
+<div class="place-name">CGV Buôn Ma Thuột</div>
+<div class="place-desc">Xem phim</div>
+</div>
+
+<div class="place">
+<div class="place-name">Khu vui chơi Kitty</div>
+<div class="place-desc">Gia đình và trẻ em</div>
+</div>
+
+<div class="place">
+<div class="place-name">Phố đi bộ</div>
+<div class="place-desc">Dạo chơi buổi tối</div>
+</div>
+
+<div class="place">
+<div class="place-name">Beer Club</div>
+<div class="place-desc">Giải trí về đêm</div>
 </div>
 
 </div>
@@ -363,28 +481,38 @@ Hôm nay bạn muốn làm gì?
 </div>
 
 <button class="taxi">
-<span>🚕</span>
-Đặt xe
+🚕
+<span>Đặt xe</span>
 </button>
 
-</section>
+</div>
 
 <script>
 
 function toggleMenu(id){
 
-const menus=document.querySelectorAll('.dropdown');
+document
+.querySelectorAll('.dropdown')
+.forEach(item=>{
+item.classList.remove('active')
+})
 
-menus.forEach(menu=>{
+document
+.getElementById(id)
+.classList.toggle('active')
 
-if(menu.id!==id){
-menu.classList.remove('show');
 }
 
-});
+function openMenu(){
+document
+.getElementById('sideMenu')
+.classList.add('active')
+}
 
-document.getElementById(id).classList.toggle('show');
-
+function closeMenu(){
+document
+.getElementById('sideMenu')
+.classList.remove('active')
 }
 
 </script>
