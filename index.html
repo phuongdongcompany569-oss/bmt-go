@@ -1,256 +1,59 @@
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BMT GO</title>
+<div class="hero">
+    <div class="overlay"></div>
 
-<style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
-}
+    <header>
+        <img src="logo.png" class="logo">
+        <div class="menu">☰</div>
+    </header>
 
-body{
-background:#050505;
-color:white;
-overflow-x:hidden;
-}
+    <div class="content">
 
-.hero{
-height:100vh;
-background:
-linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.9)),
-url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200');
-background-size:cover;
-background-position:center;
-display:flex;
-align-items:center;
-justify-content:center;
-padding:20px;
-}
+        <h2>Chào mừng đến</h2>
 
-.glass{
-width:100%;
-max-width:420px;
-background:rgba(15,15,15,.75);
-backdrop-filter:blur(16px);
-border:1px solid rgba(255,255,255,.08);
-border-radius:30px;
-padding:24px;
-box-shadow:0 0 40px rgba(255,0,0,.15);
-}
+        <h1>Buôn Ma Thuột</h1>
 
-.logo{
-display:flex;
-align-items:center;
-gap:12px;
-margin-bottom:25px;
-}
+        <p>
+            Khám phá Buôn Ma Thuột
+            như người địa phương
+        </p>
 
-.logo img{
-width:65px;
-}
+        <div class="line"></div>
 
-.logo h1{
-font-size:34px;
-font-weight:800;
-}
+        <h3>Hôm nay bạn muốn làm gì?</h3>
 
-.logo span{
-color:#ff2020;
-}
+        <div class="grid">
 
-.tagline{
-color:#bbb;
-font-size:14px;
-margin-top:4px;
-}
+            <button class="card">
+                🍜
+                <span>Ăn đặc sản</span>
+            </button>
 
-.hero h2{
-font-size:38px;
-margin-bottom:12px;
-line-height:1.2;
-}
+            <button class="card">
+                ☕
+                <span>Uống cafe</span>
+            </button>
 
-.hero p{
-color:#ccc;
-line-height:1.6;
-margin-bottom:25px;
-}
+            <button class="card">
+                🏛
+                <span>Khám phá</span>
+            </button>
 
-.start-btn{
-width:100%;
-padding:16px;
-border:none;
-border-radius:16px;
-background:#ff2020;
-color:white;
-font-size:18px;
-font-weight:700;
-cursor:pointer;
-transition:.3s;
-}
+            <button class="card">
+                🛏
+                <span>Nghỉ ngơi</span>
+            </button>
 
-.start-btn:hover{
-transform:translateY(-2px);
-background:#ff3030;
-}
+            <button class="card full">
+                🎉 Giải trí
+            </button>
 
-.categories{
-margin-top:20px;
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:12px;
-}
+        </div>
 
-.category{
-background:rgba(255,255,255,.05);
-border:1px solid rgba(255,255,255,.08);
-border-radius:16px;
-padding:16px;
-cursor:pointer;
-transition:.3s;
-}
+    </div>
 
-.category:hover{
-border-color:#ff2020;
-transform:translateY(-3px);
-}
-
-.category h3{
-font-size:16px;
-margin-bottom:5px;
-}
-
-.category p{
-font-size:12px;
-color:#999;
-margin:0;
-}
-
-.dropdown{
-display:none;
-margin-top:15px;
-background:#111;
-border-radius:15px;
-padding:15px;
-}
-
-.place{
-padding:12px;
-border-bottom:1px solid rgba(255,255,255,.08);
-}
-
-.place:last-child{
-border:none;
-}
-
-.place strong{
-display:block;
-margin-bottom:5px;
-}
-
-.place span{
-color:#999;
-font-size:13px;
-}
-</style>
-</head>
-
-<body>
-
-<section class="hero">
-
-<div class="glass">
-
-<div class="logo">
-<img src="https://i.imgur.com/Jn1oY2X.png">
-<div>
-<h1>BMT <span>GO</span></h1>
-<div class="tagline">Khám phá Buôn Ma Thuột như người địa phương</div>
-</div>
-</div>
-
-<h2>Ăn xong rồi?</h2>
-
-<p>
-Khám phá những quán cafe, điểm check-in, khu vui chơi và địa điểm thú vị mà người dân Buôn Ma Thuột thật sự hay đi.
-</p>
-
-<button class="start-btn">
-🚀 Khám phá ngay
-</button>
-
-<div class="categories">
-
-<div class="category" onclick="toggleBox('cafe')">
-<h3>☕ Cafe</h3>
-<p>Quán đẹp, view chill</p>
-</div>
-
-<div class="category" onclick="toggleBox('khampha')">
-<h3>🏞 Khám phá</h3>
-<p>Điểm tham quan nổi bật</p>
-</div>
-
-<div class="category" onclick="toggleBox('nghingoi')">
-<h3>🏨 Nghỉ ngơi</h3>
-<p>Khách sạn, homestay</p>
-</div>
-
-<div class="category" onclick="toggleBox('giaitri')">
-<h3>🎡 Giải trí</h3>
-<p>Vui chơi thư giãn</p>
-</div>
+    <button class="taxi">
+        🚕
+        <span>Đặt xe</span>
+    </button>
 
 </div>
-
-<div class="dropdown" id="cafe">
-<div class="place"><strong>Arul Coffee</strong><span>600m • ⭐ 4.8</span></div>
-<div class="place"><strong>KoTam Coffee</strong><span>1.1km • ⭐ 4.7</span></div>
-<div class="place"><strong>Tiệm Cafe Tháng 3</strong><span>1.3km • ⭐ 4.8</span></div>
-<div class="place"><strong>The Coffee House</strong><span>1.5km • ⭐ 4.6</span></div>
-</div>
-
-<div class="dropdown" id="khampha">
-<div class="place"><strong>Làng Cà Phê Trung Nguyên</strong></div>
-<div class="place"><strong>Bảo Tàng Thế Giới Cà Phê</strong></div>
-<div class="place"><strong>Thác Dray Nur</strong></div>
-<div class="place"><strong>Buôn Ako Dhong</strong></div>
-</div>
-
-<div class="dropdown" id="nghingoi">
-<div class="place"><strong>Mường Thanh BMT</strong></div>
-<div class="place"><strong>Elephants Hotel</strong></div>
-<div class="place"><strong>Sojo Hotel</strong></div>
-<div class="place"><strong>Lee's House</strong></div>
-</div>
-
-<div class="dropdown" id="giaitri">
-<div class="place"><strong>CGV Buôn Ma Thuột</strong></div>
-<div class="place"><strong>Khu vui chơi Kitty</strong></div>
-<div class="place"><strong>Phố đi bộ</strong></div>
-<div class="place"><strong>Bowling Center</strong></div>
-</div>
-
-</div>
-
-</section>
-
-<script>
-function toggleBox(id){
-
-document.querySelectorAll('.dropdown')
-.forEach(box=>{
-box.style.display='none'
-})
-
-document.getElementById(id).style.display='block'
-}
-</script>
-
-</body>
-</html>
